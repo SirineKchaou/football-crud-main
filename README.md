@@ -12,8 +12,12 @@ Avant de commencer, assurez-vous que vous avez les outils suivants installés su
 - Angular CLI
 - MySQL ou une autre base de données compatible
 
-## Installation
 
+## Installation
+1. **Cloner le dépôt**
+   ```sh
+   git clone https://github.com/SirineKchaou/football-crud-main.git
+   ```
 ### 1. Dézipper le projet
 
 Si vous avez reçu le projet sous forme de fichier ZIP, commencez par le dézipper sur votre machine locale. Par exemple :

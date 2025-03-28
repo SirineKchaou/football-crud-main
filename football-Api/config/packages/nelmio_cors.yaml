@@ -1,0 +1,11 @@
+nelmio_cors:
+    defaults:
+        origin_regex: true
+        allow_origin: ['http://localhost:4200']
+        allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
+        allow_headers: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+        expose_headers: ['Authorization', 'Link']  # Added Authorization
+        max_age: 3600
+        allow_credentials: true  # This is crucial for authentication
+    paths:
+        '^/': null

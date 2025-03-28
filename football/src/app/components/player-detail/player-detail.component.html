@@ -1,0 +1,19 @@
+<header>
+  <h1>Football Manager</h1>
+
+</header>
+<div class="player-detail-container" >
+  <h2>Détails du Joueur</h2>
+  <div class="player-card">
+    <div class="player-info">
+      <p><strong>Nom :</strong> {{ player.firstName }} {{ player.lastName }}</p>
+      <p><strong>Position :</strong> {{ player.position }}</p>
+      <p><strong>Âge :</strong> {{ player.age }}</p>
+      <p><strong>Équipe :</strong> {{ player.team }}</p>
+    </div>
+    <button class="btn-back" (click)="goBack()">Retour</button>
+  </div>
+</div>
+<footer>
+  <p>© 2025 Football Manager - Tous droits réservés</p>
+</footer>

@@ -1,0 +1,57 @@
+<header>
+  <h1>Football Manager</h1>
+  <div class="header-actions">
+    <button *ngIf="isAuthenticated" class="logout-btn" (click)="logout()">Déconnexion</button>
+  </div>
+</header>
+<div class="player-list">
+  <h2>Liste des joueurs</h2>
+
+  <!-- importer le fichier Excel -->
+  <form (ngSubmit)="onFileSubmit()" enctype="multipart/form-data">
+    <div class="form-group">
+
+      <input type="file" id="fileUpload" name="file" (change)="onFileChange($event)" />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!selectedFile">Importer</button>
+  </form>
+
+
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+
+  <div class="no-players" *ngIf="players.length === 0">
+    <p>Aucun joueur à afficher.</p>
+  </div>
+
+  <!-- Affichager des joueurs -->
+  <table class="data-table" *ngIf="players.length > 0">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Position</th>
+      <th>Âge</th>
+      <th>Équipe</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let player of players">
+      <td>{{ player.firstName }} {{ player.lastName }}</td>
+      <td>{{ player.position }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.team }}</td>
+      <td>
+        <button class="edit-btn" (click)="goToPlayerUpdate(player.id)">Modifier</button>
+        <button class="delete-btn" (click)="deletePlayer(player.id)">Supprimer</button>
+        <button class="show-btn" (click)="goToPlayerDetail(player.id)">Détail</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<footer>
+  <p>© 2025 Football Manager - Tous droits réservés</p>
+</footer>

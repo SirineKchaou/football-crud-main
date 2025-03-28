@@ -1,0 +1,52 @@
+<header>
+  <h1>Football Manager</h1>
+
+</header>
+<div class="container">
+
+
+  <form (ngSubmit)="savePlayer()" [formGroup]="playerForm">
+    <!-- Prénom -->
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input id="firstName" type="text" class="form-control" formControlName="firstName" required />
+    </div>
+
+    <!-- Nom -->
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input id="lastName" type="text" class="form-control" formControlName="lastName" required />
+    </div>
+
+    <!-- Position -->
+    <div class="form-group">
+      <label for="position">Position</label>
+      <select id="position" class="form-control" formControlName="position" required>
+        <option *ngFor="let pos of positions" [value]="pos">{{ pos }}</option>
+      </select>
+    </div>
+
+    <!-- Équipe -->
+    <div class="form-group">
+      <label for="team">Équipe</label>
+      <input id="team" type="text" class="form-control" formControlName="team" required />
+    </div>
+
+    <!-- Âge -->
+    <div class="form-group">
+      <label for="age">Âge</label>
+      <input id="age" type="number" class="form-control" formControlName="age" required min="16" />
+    </div>
+
+    <!-- Boutons -->
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-primary" [disabled]="playerForm.invalid">
+        Ajouter
+      </button>
+
+    </div>
+  </form>
+</div>
+<footer>
+  <p>© 2025 Football Manager - Tous droits réservés</p>
+</footer>

@@ -14,18 +14,13 @@ Avant de commencer, assurez-vous que vous avez les outils suivants installés su
 
 
 ## Installation
-1. **Cloner le dépôt**
+### 1. Cloner le projet
+
    ```sh
    git clone https://github.com/SirineKchaou/football-crud-main.git
    ```
-### 1. Dézipper le projet
 
-Si vous avez reçu le projet sous forme de fichier ZIP, commencez par le dézipper sur votre machine locale. Par exemple :
 
-```bash
-unzip football-player-management.zip
-cd football-player-management
-```
 ### 2. Backend (Symfony)
    Installation des dépendances
    Allez dans le répertoire du backend :
